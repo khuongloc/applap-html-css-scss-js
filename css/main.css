@@ -11,6 +11,7 @@ body,
 input,
 button {
   font-family: "Poppins", sans-serif;
+  font-size: inherit;
 }
 
 .btn {
@@ -56,9 +57,8 @@ button {
   font-weight: bolder;
 }
 
-.detail__tilte {
-  font-size: 1.2rem;
-  font-weight: bolder;
+.detail__title {
+  font-weight: bold;
 }
 
 .detail__tilte--red {
@@ -71,6 +71,10 @@ button {
 
 .detail__tilte--green {
   color: #40975f;
+}
+
+.detail__title--default {
+  color: #242f51;
 }
 
 .ml-1 {
@@ -129,11 +133,11 @@ button {
   margin-top: 2.5rem;
 }
 
-.mt-5, .trusted-companies, .features, .smart-jackpot, .smart-jackpot .detail-container, .designed {
+.mt-5, .trusted-companies, .features, .smart-jackpot, .smart-jackpot .detail-container, .designed, .why-choose {
   margin-top: 3rem;
 }
 
-.px-1, .features, .designed {
+.px-1, .features, .designed, .why-choose {
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -184,7 +188,7 @@ button {
 }
 
 .navbar__brand span:last-child {
-  color: #2500f9;
+  color: #242f51;
 }
 
 .navbar__toggle-menu {
@@ -382,6 +386,26 @@ button {
   margin: 0 auto;
 }
 
+.why-choose {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.why-choose .card {
+  margin-bottom: 2rem;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/ 4;
+  text-align: center;
+}
+
+.why-choose .detail {
+  text-align: center;
+  padding: 1rem;
+}
+
 @media (max-width: 768px) {
   .navbar {
     -webkit-box-orient: vertical;
@@ -532,6 +556,11 @@ button {
     display: block;
     max-width: 100%;
     margin: 0 auto;
+  }
+  .why-choose .detail {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/ 4;
   }
 }
 /*# sourceMappingURL=main.css.map */
