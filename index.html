@@ -192,7 +192,7 @@
             alt="network"
           />
           <div>
-            <div class="detail__title detail__tilte--green">Network Effect</div>
+            <div class="detail__title detail__tilte--blue">Network Effect</div>
             <div>
               Get your blood tests delivered at home collect a sample from the
               news your blood tests.
@@ -206,7 +206,7 @@
             alt="bill"
           />
           <div>
-            <div class="detail__title detail__tilte--blue">
+            <div class="detail__title detail__tilte--green">
               Bigger Rewards Method
             </div>
             <div>
@@ -309,8 +309,124 @@
         </div>
       </div>
     </div>
+
+    <!-- section 7 - ultimate features -->
+    <div class="ultimate-features">
+      <div class="card">
+        <div class="card__header">Ultimate features that we built</div>
+        <div class="card__subtitle">
+          Increase productivity with a simple to-do app. app for managing your
+          personal budgets.
+        </div>
+      </div>
+      <div class="detail">
+        <img
+          src="./images/section7/app-development.png"
+          alt=""
+          class="detail__img"
+        />
+        <div class="detail__title detail__title--default">App development</div>
+        <div>
+          Get your blood tests delivered at home collect a sample from the news
+          your blood tests.
+        </div>
+      </div>
+      <div class="detail">
+        <img src="./images/section7/ui.png" alt="" class="detail__img" />
+        <div class="detail__title detail__title--default">UX Planning</div>
+        <div>
+          Get your blood tests delivered at home collect a sample from the news
+          your blood tests.
+        </div>
+      </div>
+      <img
+        src="./images/section8/phone4.png"
+        alt=""
+        class="ultimate-features__img"
+      />
+      <div class="detail">
+        <img src="./images/section7/computer.png" alt="" class="detail__img" />
+        <div class="detail__title detail__title--default">Cloud Storage</div>
+        <div>
+          Get your blood tests delivered at home collect a sample from the news
+          your blood tests.
+        </div>
+      </div>
+      <div class="detail">
+        <img
+          src="./images/section7/customer-service.png"
+          alt=""
+          class="detail__img"
+        />
+        <div class="detail__title detail__title--default">Customer Support</div>
+        <div>
+          Get your blood tests delivered at home collect a sample from the news
+          your blood tests.
+        </div>
+      </div>
+      <div><button class="btn btn--primary">See all</button></div>
+    </div>
+
+    <!-- section 8 - payment -->
+    <div class="payment">
+      <div class="card">
+        <div class="card__header">
+          Get awesome features, without extra charges
+        </div>
+        <div>
+          The rise of mobile devices transforms the way we consume information
+          entirely and the world's most elevant channels such as Facebook.
+        </div>
+        <span class="payment__time-container">
+          <button class="btn btn--primary payment__time">Monthly</button
+          >&nbsp;&nbsp;
+          <button class="btn payment__time">Anually</button>
+        </span>
+      </div>
+      <div class="payment__info-container">
+        <div class="payment__info">
+          <div class="payment__card">
+            <div class="payment__header">
+              <div class="payment__price payment__price--free">
+                <span>$0</span>/month
+              </div>
+              <div class="payment__name">Bussiness Class</div>
+              <div>For small teams or office</div>
+            </div>
+            <div class="payment__features">
+              <div>Drag & Drop Builder</div>
+              <div>1,000's of Templates</div>
+              <div>Blog Support Tools</div>
+              <div>eCommerce Store</div>
+              <button class="btn btn--primary">Start free trial</button>
+            </div>
+          </div>
+        </div>
+        <div class="payment__info">
+          <div class="payment__card">
+            <div class="payment__header">
+              <div class="payment__price payment__price--paid">
+                <span>$99</span>/month
+              </div>
+              <div class="payment__name">Bussiness Class</div>
+              <div>For small teams or office</div>
+            </div>
+            <div class="payment__features">
+              <div>Drag & Drop Builder</div>
+              <div>1,000's of Templates</div>
+              <div>Blog Support Tools</div>
+              <div>eCommerce Store</div>
+              <button class="btn btn--primary">Start free trial</button>
+              <a href="#" class="link link--primary">Or start 14 days trial</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- script -->
     <script>
+      // toggle navbar
       const toggleMenu = document.querySelector(".navbar__toggle-menu");
       const navbarNavContainer = document.querySelector(
         ".navbar__nav-container"
@@ -326,6 +442,41 @@
           navbarNavContainer.style.opacity = 0;
         }
       };
+
+      // toggle payment
+      const paymentMonthly = document.querySelectorAll(".payment__time");
+
+      for (let i = 0; i < paymentMonthly.length; i++) {
+        paymentMonthly[i].addEventListener("click", (e) => {
+          for (let j = 0; j < paymentMonthly.length; j++) {
+            if (paymentMonthly[j].classList.contains("btn--primary")) {
+              paymentMonthly[j].classList.remove("btn--primary");
+            }
+          }
+          if (!e.target.classList.contains("btn--primary")) {
+            e.target.classList.add("btn--primary");
+            if (e.target.innerHTML.toLowerCase() === "monthly") {
+              const freeMonthlyHTML = "<span>$0</span>/monthly";
+              const paidMonthlyHTML = "<span>$99</span>/monthly";
+              document.querySelector(
+                ".payment__price--free"
+              ).innerHTML = freeMonthlyHTML;
+              document.querySelector(
+                ".payment__price--paid"
+              ).innerHTML = paidMonthlyHTML;
+            } else {
+              const freeAnuallyHTML = "<span>$0</span>/anually";
+              const paidAnuallyHTML = "<span>$699</span>/anually";
+              document.querySelector(
+                ".payment__price--free"
+              ).innerHTML = freeAnuallyHTML;
+              document.querySelector(
+                ".payment__price--paid"
+              ).innerHTML = paidAnuallyHTML;
+            }
+          }
+        });
+      }
     </script>
   </body>
 </html>
