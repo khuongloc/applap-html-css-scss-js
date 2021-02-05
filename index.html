@@ -424,59 +424,49 @@
       </div>
     </div>
 
+    <!-- section 9 - reviews  -->
+    <div class="reviews">
+      <div class="card__header">Most Client Saticfactions by using product</div>
+      <div>
+        The rise of mobile devices transforms the way we consume information
+        entirely and the world's most elevant channels such as Facebook.
+      </div>
+      <div class="reviews__body">
+        <!-- <div class="reviews__stars">
+          <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+        <div class="reviews__title detail__title detail__title--default">
+          User friendly and customizable
+        </div>
+        <div class="reviews__content">
+          Get your blood tests delivered at home collect a sample from the news
+          your blood tests.
+        </div>
+        <div class="reviews__of">
+          <div>
+            <img
+              src="https://avatars.githubusercontent.com/u/1?v=4"
+              alt=""
+              class="reviews__avatar"
+            />
+            <div>
+              <div class="reviews__name">name</div>
+              <div class="reviews__position">CEO</div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="reviews__btn">
+        <span class="reviews__prev"><i class="fas fa-arrow-left"></i></span
+        >&nbsp;&nbsp;
+        <span class="reviews__next"><i class="fas fa-arrow-right"></i></span>
+      </div>
+    </div>
+
     <!-- script -->
-    <script>
-      // toggle navbar
-      const toggleMenu = document.querySelector(".navbar__toggle-menu");
-      const navbarNavContainer = document.querySelector(
-        ".navbar__nav-container"
-      );
-      toggleMenu.onclick = function () {
-        if (this.style.transform === "rotate(90deg)") {
-          this.style.transform = "rotate(0deg)";
-          navbarNavContainer.style.height = "100%";
-          navbarNavContainer.style.opacity = 1;
-        } else {
-          this.style.transform = "rotate(90deg)";
-          navbarNavContainer.style.height = 0;
-          navbarNavContainer.style.opacity = 0;
-        }
-      };
-
-      // toggle payment
-      const paymentMonthly = document.querySelectorAll(".payment__time");
-
-      for (let i = 0; i < paymentMonthly.length; i++) {
-        paymentMonthly[i].addEventListener("click", (e) => {
-          for (let j = 0; j < paymentMonthly.length; j++) {
-            if (paymentMonthly[j].classList.contains("btn--primary")) {
-              paymentMonthly[j].classList.remove("btn--primary");
-            }
-          }
-          if (!e.target.classList.contains("btn--primary")) {
-            e.target.classList.add("btn--primary");
-            if (e.target.innerHTML.toLowerCase() === "monthly") {
-              const freeMonthlyHTML = "<span>$0</span>/monthly";
-              const paidMonthlyHTML = "<span>$99</span>/monthly";
-              document.querySelector(
-                ".payment__price--free"
-              ).innerHTML = freeMonthlyHTML;
-              document.querySelector(
-                ".payment__price--paid"
-              ).innerHTML = paidMonthlyHTML;
-            } else {
-              const freeAnuallyHTML = "<span>$0</span>/anually";
-              const paidAnuallyHTML = "<span>$699</span>/anually";
-              document.querySelector(
-                ".payment__price--free"
-              ).innerHTML = freeAnuallyHTML;
-              document.querySelector(
-                ".payment__price--paid"
-              ).innerHTML = paidAnuallyHTML;
-            }
-          }
-        });
-      }
-    </script>
+    <script src="./javascript/main.js"></script>
   </body>
 </html>

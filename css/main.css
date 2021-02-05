@@ -133,7 +133,7 @@ button {
   margin-top: 2.5rem;
 }
 
-.mt-5, .trusted-companies, .features, .smart-jackpot, .smart-jackpot .detail-container, .designed, .why-choose, .ultimate-features, .payment {
+.mt-5, .trusted-companies, .features, .smart-jackpot, .smart-jackpot .detail-container, .designed, .why-choose, .ultimate-features, .payment, .reviews {
   margin-top: 3rem;
 }
 
@@ -499,6 +499,57 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.reviews {
+  margin-top: 2rem;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.reviews__stars {
+  margin-top: 2rem;
+  color: #fcae61;
+}
+
+.reviews__of > div:first-child {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.reviews__avatar {
+  max-width: 60px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.reviews__name {
+  color: #242f51;
+  font-weight: bold;
+}
+
+.reviews__btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.reviews__btn span {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.reviews__btn span:hover {
+  color: grey;
 }
 
 @media (max-width: 768px) {
