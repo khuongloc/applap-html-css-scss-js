@@ -152,7 +152,7 @@ displayReview(0);
 const questions = [
   {
     id: 1,
-    question: "How to contact width riders emergency",
+    question: "How to contact with providers emergency?",
     answer:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English",
   },
@@ -164,7 +164,7 @@ const questions = [
   },
   {
     id: 3,
-    question: "Website respone taking time. How to improve",
+    question: "Website respone taking time. How to improve?",
     answer:
       'Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.',
   },
@@ -181,7 +181,7 @@ const questionsHTML = questions.map((ques) => {
   return (
     '<div class="asked__question-contaiener"><div class="asked__question"><span>' +
     question +
-    '</span><span class="asked__toggle"><i class="fas fa-plus"></i></span></div><div class="asked__answer hide">' +
+    '</span><span ><i class="fas fa-plus asked__toggle"></i></span></div><div class="asked__answer hide">' +
     answer +
     "</div></div>"
   );
@@ -195,13 +195,17 @@ const toggleQuestion = (e) => {
   const relatedAnswer =
     e.target.parentElement.parentElement.parentElement.childNodes[1];
   const isShow = relatedAnswer.classList.contains("show");
-
+  console.log(relatedAnswer);
   if (isShow) {
+    e.target.classList.add("fa-plus");
+    e.target.classList.remove("fa-minus");
     relatedAnswer.classList.remove("show");
     relatedAnswer.classList.add("hide");
   } else {
     relatedAnswer.classList.add("show");
     relatedAnswer.classList.remove("hide");
+    e.target.classList.add("fa-minus");
+    e.target.classList.remove("fa-plus");
   }
 };
 
