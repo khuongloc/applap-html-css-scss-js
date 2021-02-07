@@ -49,7 +49,6 @@ for (let i = 0; i < paymentMonthly.length; i++) {
 }
 
 // reviews
-
 const reviews = [
   {
     id: 1,
@@ -58,7 +57,7 @@ const reviews = [
       "Get your blood tests delivered at home collect a sample from the news your blood tests.",
     avatar_url: "https://avatars.githubusercontent.com/u/1?v=4",
     name: "mojombo",
-    stars: 5,
+    stars: 4.5,
     position: "CEO of company 1",
   },
   {
@@ -68,7 +67,7 @@ const reviews = [
       "Get your blood tests delivered at home collect a sample from the news your blood tests.",
     avatar_url: "https://avatars.githubusercontent.com/u/2?v=4",
     name: "defunkt",
-    stars: 4,
+    stars: 5,
     position: "CEO of company 2",
   },
   {
@@ -78,7 +77,7 @@ const reviews = [
       "Get your blood tests delivered at home collect a sample from the news your blood tests.",
     avatar_url: "https://avatars.githubusercontent.com/u/3?v=4",
     name: "pjhyett",
-    stars: 3.5,
+    stars: 4,
     position: "CEO of company 3",
   },
 ];
@@ -91,16 +90,13 @@ const checkRemainStars = (stars) => {
   return Array.from({ length: remainStars }, (v) => noStar);
 };
 const getStarsHTML = (stars) => {
-  let newStarsHTML = "";
+  let newStarsHTML = [];
   if (stars < Math.ceil(stars)) {
     newStarsHTML = Array.from({ length: Math.floor(stars) }, (v) => fullStar);
-    const lastStars = [...newStarsHTML, halfStar, ...checkRemainStars()];
     return [...newStarsHTML, halfStar, ...checkRemainStars(stars)];
   } else {
-    return (newStarsHTML = Array.from(
-      { length: Math.floor(stars) },
-      (v) => fullStar
-    ));
+    newStarsHTML = Array.from({ length: stars }, (v) => fullStar);
+    return [...newStarsHTML, ...checkRemainStars(stars)];
   }
 };
 
@@ -123,12 +119,8 @@ const reviewsHTML = reviews.map((review) => {
   );
 });
 
-const reviews__body = document.querySelector(".reviews__body");
-// const reviews__body = (document.querySelector(
-//   ".reviews__body"
-// ).innerHTML = reviewsHTML.join(""));
-
 // change reviews when clicking on review btns
+const reviews__body = document.querySelector(".reviews__body");
 let indexOfReviewsHTML = 0;
 const displayReview = (indexOfReviewsHTML) => {
   reviews__body.innerHTML = "";
@@ -140,7 +132,6 @@ const prevOnClick = (index) => {
     indexOfReviewsHTML = reviewsHTML.length - 1;
   }
   displayReview(indexOfReviewsHTML);
-  console.log(indexOfReviewsHTML);
 };
 const nextOnClick = (index) => {
   indexOfReviewsHTML += index;
@@ -148,7 +139,6 @@ const nextOnClick = (index) => {
     indexOfReviewsHTML = 0;
   }
   displayReview(indexOfReviewsHTML);
-  console.log(indexOfReviewsHTML);
 };
 
 const reviewsPrev = document.querySelector(".reviews__prev");
@@ -157,3 +147,64 @@ const reviewsNext = document.querySelector(".reviews__next");
 reviewsPrev.onclick = () => prevOnClick(-1);
 reviewsNext.onclick = () => nextOnClick(1);
 displayReview(0);
+
+// requently asked questions
+const questions = [
+  {
+    id: 1,
+    question: "How to contact width riders emergency",
+    answer:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English",
+  },
+  {
+    id: 2,
+    question: "App installation falied. How to update system infomations?",
+    answer:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,",
+  },
+  {
+    id: 3,
+    question: "Website respone taking time. How to improve",
+    answer:
+      'Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.',
+  },
+  {
+    id: 4,
+    question: "New update fixed all bugs and issues",
+    answer:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English",
+  },
+];
+
+const questionsHTML = questions.map((ques) => {
+  const { question, answer } = ques;
+  return (
+    '<div class="asked__question-contaiener"><div class="asked__question"><span>' +
+    question +
+    '</span><span class="asked__toggle"><i class="fas fa-plus"></i></span></div><div class="asked__answer hide">' +
+    answer +
+    "</div></div>"
+  );
+});
+
+document.querySelector(".asked__questions").innerHTML = questionsHTML.join("");
+
+const askedBtnsToggle = document.querySelectorAll(".asked__toggle");
+
+const toggleQuestion = (e) => {
+  const relatedAnswer =
+    e.target.parentElement.parentElement.parentElement.childNodes[1];
+  const isShow = relatedAnswer.classList.contains("show");
+
+  if (isShow) {
+    relatedAnswer.classList.remove("show");
+    relatedAnswer.classList.add("hide");
+  } else {
+    relatedAnswer.classList.add("show");
+    relatedAnswer.classList.remove("hide");
+  }
+};
+
+for (let i = 0; i < askedBtnsToggle.length; i++) {
+  askedBtnsToggle[i].addEventListener("click", toggleQuestion);
+}

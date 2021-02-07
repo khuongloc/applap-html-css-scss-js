@@ -77,6 +77,14 @@ button {
   color: #242f51;
 }
 
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
 .ml-1 {
   margin-left: 1rem;
 }
@@ -125,7 +133,7 @@ button {
   margin-top: 1.5rem;
 }
 
-.mt-3 {
+.mt-3, .asked__questions {
   margin-top: 2rem;
 }
 
@@ -133,7 +141,7 @@ button {
   margin-top: 2.5rem;
 }
 
-.mt-5, .trusted-companies, .features, .smart-jackpot, .smart-jackpot .detail-container, .designed, .why-choose, .ultimate-features, .payment, .reviews {
+.mt-5, .trusted-companies, .features, .smart-jackpot, .smart-jackpot .detail-container, .designed, .why-choose, .ultimate-features, .payment, .reviews, .asked {
   margin-top: 3rem;
 }
 
@@ -539,17 +547,82 @@ button {
   position: absolute;
   bottom: 0;
   right: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 .reviews__btn span {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #fcae61;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
 .reviews__btn span:hover {
   color: grey;
+}
+
+.reviews__btn span i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.asked {
+  margin-top: 2rem;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.asked .card__header, .asked .payment__name,
+.asked .card__subtitle {
+  text-align: center;
+}
+
+.asked__question-contaiener {
+  background-color: #f5f7fa;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.asked__question {
+  position: relative;
+}
+
+.asked__question span {
+  display: inline-block;
+}
+
+.asked__question span:first-child {
+  width: calc(100% - 2rem);
+  color: #242f51;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.asked__question span:last-child {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.asked__question span:last-child:hover {
+  color: grey;
+}
+
+.asked__answer {
+  padding-top: 1rem;
+  width: calc(100% - 2rem);
 }
 
 @media (max-width: 768px) {
@@ -740,6 +813,10 @@ button {
   }
   .reviews__btn {
     right: 1rem;
+  }
+  .asked {
+    padding: 0 1rem;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=main.css.map */
