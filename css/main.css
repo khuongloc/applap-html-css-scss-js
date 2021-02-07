@@ -734,5 +734,12 @@ button {
         -ms-flex-align: center;
             align-items: center;
   }
+  .reviews {
+    padding: 0 1rem;
+    width: 100%;
+  }
+  .reviews__btn {
+    right: 1rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */
