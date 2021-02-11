@@ -57,6 +57,11 @@ button {
   font-weight: bolder;
 }
 
+.card__subheader {
+  width: 50%;
+  margin: 0 auto;
+}
+
 .detail__title {
   font-weight: bold;
 }
@@ -141,8 +146,12 @@ button {
   margin-top: 2.5rem;
 }
 
-.mt-5, .trusted-companies, .features, .smart-jackpot, .smart-jackpot .detail-container, .designed, .why-choose, .ultimate-features, .payment, .reviews, .asked {
+.mt-5 {
   margin-top: 3rem;
+}
+
+.mt-section, .trusted-companies, .features, .smart-jackpot, .smart-jackpot .detail-container, .designed, .why-choose, .ultimate-features, .payment, .reviews, .asked, .download {
+  margin-top: 5rem;
 }
 
 .px-1, .features, .designed, .why-choose, .ultimate-features, .payment {
@@ -417,6 +426,7 @@ button {
 .ultimate-features {
   display: -ms-grid;
   display: grid;
+  gap: 2rem;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
   -webkit-box-align: center;
@@ -442,8 +452,8 @@ button {
   grid-area: 1 / 3 / 5/ 5;
 }
 
-.ultimate-features .detail {
-  padding: 1rem 1rem 1rem 0;
+.ultimate-features .btn {
+  margin-top: 1rem;
 }
 
 .payment .card {
@@ -623,6 +633,57 @@ button {
 .asked__answer {
   padding-top: 1rem;
   width: calc(100% - 2rem);
+}
+
+.download {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.download > div {
+  width: 50%;
+}
+
+.download > div:first-child {
+  padding: 1rem;
+}
+
+.download > div:first-child img {
+  margin-top: 1rem;
+}
+
+.download__main-img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.footer {
+  background-color: #242f51;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.footer .navbar__link {
+  color: white;
+}
+
+.footer__icons {
+  font-size: 1.3rem;
+  color: grey;
+}
+
+.footer .navbar__brand span:last-child {
+  color: white;
 }
 
 @media (max-width: 768px) {
@@ -816,6 +877,21 @@ button {
   }
   .asked {
     padding: 0 1rem;
+    width: 100%;
+  }
+  .download {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .download > div {
+    width: 100%;
+  }
+  .footer .navbar__nav > li {
+    text-align: center;
+  }
+  .card__subheader {
     width: 100%;
   }
 }
